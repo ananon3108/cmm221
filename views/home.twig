@@ -1,59 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- lang="en" คือการกำหนดภาษาหลักให้กับเว็บไซต์-->
-<head>
-	<meta charset="UTF-8">
-	<title>CMM 19</title>
-	<Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css"> <!--ลิ้งของ css นำมาใช้กับhtml-->
-	<link rel="stylesheet" type="text/css" href="/assets/home.css"><!--ทำให้ข้อความที่เป็นเมนูบาร์อยู่ตรงกลาง-->
-</head>
-<body>
-	<header>
-		<div class="has-text-centered"><!--กำหนดcenterของข้อความ-->
-			<img src="/assets/images/logo.png" alt="" width="145" height="auto"><!--เพิ่มรูปและกำหนดขนาด-->
-		</div>
-			
-		<nav class="navbar-tabs"><!--ใช้ทำเมนูบาร์-->
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">WORK</a>
-		</nav>
-	</header>
+{% extends 'layout/base.twig' %}
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/home.css">
+{% endblock %}
+{% block content %}
+	
 
 	<main>
 		<section class="banner">
 			<div class="highlight">
 				<div class="columns">
-					<div class="column highlight-item"><!--ใส่รูปพร้อมข้อความแต่ต้องไปลิ้งกับ home.css-->
-						<div class="has-text-centered">
-							<h1>Hello</h1>
-						</div>
+					<div class="column highlight-item" style="background-image: url({{highlight.url}});">  <!--ใส่รูปพร้อมข้อความแต่ต้องไปลิ้งกับ home.css-->
+						
+							<h1>{{ highlight.title }}</h1>
 					</div>
+					
 				</div>
 			</div>
 			<div class="thumbnail">
 				<div class="columns is-marginless"><!--ขอบของรูปภาพที่เป็นคอลัม-->
-				<div class="column thumbnail-item is-paddingless" style="background-image: url(/assets/images/home/banner/thumbnail-1.jpg);"><!--ใส่รูปแนวคอลัม-->
-						aaaaaaaaaa
-					</div>
-				<div class="column thumbnail-item is-paddingless" style="background-image: url(/assets/images/home/banner/thumbnail-2.jpg);"><!--ใส่รูปแนวคอลัม-->
-						bbbbbbbbbb
-						</div>
-				<div class="column thumbnail-item is-paddingless" style="background-image: url(/assets/images/home/banner/thumbnail-3.jpg);"><!--ใส่รูปแนวคอลัม-->
-						cccccccccc
-					</div>
-				<div class="column thumbnail-item is-paddingless" style="background-image: url(/assets/images/home/banner/thumbnail-4.jpg);"><!--ใส่รูปแนวคอลัม-->
-						dddddddddd
-						</div>					
-					</div>
+					{% for item in thumbnail %}
+				 	<div class="column thumbnail-item is-paddingless" style="background-image: url({{ item.url }});">   <!--ใส่รูปแนวคอลัม-->
+						{{ item.title }}
+
+
+					</div>	
+					{% endfor %}						
 				</div>
+			</div>
 			
 		</section>
 		<section class="section we-present">
@@ -203,10 +176,7 @@
 							</div>	
 						</a>										
 				</div>
-			</div>
-
-			
+			</div>			
 		</section>
 	</main>
-</body>
-</html>
+{% endblock %}	

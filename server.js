@@ -1,8 +1,8 @@
 const express = require('express') /* กำหนดวิธีการเก็บตัวแปล ประกาศตัวแปร เก็บแล้วไม่สามารถแก้ไขได้เลย เราตั้งชื่อตัวแปรว่า express*/
-    /* เอาตัวแปร express เข้ามาเพื่อเก็บไปไว้ที่ app*/
+   
 const { twig } = require('twig')
 
-const app = express ()
+const app = express () /* เอาตัวแปร express เข้ามาเพื่อเก็บไปไว้ที่ app*/
 
 app.set('view engine','twig')
 
