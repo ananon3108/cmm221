@@ -1,0 +1,47 @@
+header .navbar-tabs {
+  justify-content: center;
+}
+
+.highlight {
+  margin-bottom: 0 !important;/*กำหนดขนาด ระยะห่างของขอบรูปภาพ*/
+}
+
+.highlight .highlight-item {
+  height: 416px;
+  background: url(/assets/images/home/banner/highlight.jpg) no-repeat center/cover;/*รูปที่เป็นพื้นหลัง*/
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.highlight .highlight-item h1 {
+  font-size: 100px;/*ขนาดฟอนต์*/
+}
+
+.thumbnail {
+  border-top:  0.1rem solid #ffffff/*กำหนดขาดกรอบของรูปภาพด้านบน*/
+}
+
+.thumbnail .thumbnail-item {
+  border-right: .1rem solid #ffffff;/*กำหนดขาดกรอบของรูปภาพระหว่างภาพด้านขวา*/
+}
+
+.thumbnail .thumbnail-item:last-child {/*ขวา*/
+  border: none;
+}
+
+.thumbnail .thumbnail-item + .thumbnail-item { /*ซ้าย*/
+  border-left: .1rem solid #ffffff;
+}
+
+.thumbnail .thumbnail-item {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+}
